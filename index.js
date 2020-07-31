@@ -34,7 +34,7 @@ app.post('/paynow', [parseUrl, parseJson], (req, res) => {
     params['ORDER_ID'] = 'TEST_' + new Date().getTime();
     params['CUST_ID'] = paymentDetails.customerId;
     params['TXN_AMOUNT'] = paymentDetails.amount;
-    params['CALLBACK_URL'] = 'http://localhost:3000/callback';
+    params['CALLBACK_URL'] = `${process.env.CALLBACK_URL}/callback`;
     params['EMAIL'] = paymentDetails.customerEmail;
     params['MOBILE_NO'] = paymentDetails.customerPhone;
 
@@ -125,7 +125,7 @@ app.post('/callback', (req, res) => {
                          <div class="card">
                             <div class="card-body">
                               <p>Payment Successfully completed</p>
-                              <a href="http://localhost:3000">Click to go back to home</a>
+                              <a href="${process.env.CALLBACK_URL}">Click to go back to home</a>
                             </div>
                           </div>
                        </div>
