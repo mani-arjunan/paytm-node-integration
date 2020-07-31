@@ -18,6 +18,7 @@
   "homepage": "https://github.com/ManikandanH/paytm-node-integration#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "heroku": "^7.42.6"
   }
 }
